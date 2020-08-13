@@ -1,3 +1,7 @@
+```diff
+- Important note: The development of this plugin is currently stalled.
+```
+
 # Broadcast #
 
 A plugin for Reveal.js allowing to broadcast audio and video for slide shows.
