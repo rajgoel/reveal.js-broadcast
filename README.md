@@ -12,20 +12,25 @@ A plugin for Reveal.js allowing to broadcast audio and video for slide shows.
 
 Copy the files of the plugin next to your reveal.js presentation and add the dependencies as below.
 
-```javascript
+```html
+<script src="../reveal.js/dist/reveal.js"></script>
+<script src="../reveal.js-broadcast/RTCMultiConnection/RTCMultiConnection.js"></script>
+<script src="../reveal.js-broadcast/RTCMultiConnection/socket.io.js"></script>
+<script src="../reveal.js-broadcast/bCrypt.js"></script>
+
+<script>
+//...
 Reveal.initialize({
   // ...
   dependencies: [
-    // ...
-    { src: '../reveal.js-plugins/broadcast/RTCMultiConnection/RTCMultiConnection.min.js'},
-    { src: '../reveal.js-plugins/broadcast/RTCMultiConnection/adapter.js'},
-    { src: '../reveal.js-plugins/broadcast/RTCMultiConnection/socket.io.js'},
-    { src: '../reveal.js-plugins/broadcast/bCrypt.js'},
     { src: '../reveal.js-plugins/broadcast/broadcast.js'},
     // ...
   ]
 });
+//...
+</script>
 ```
+
 ## Configuration
 
 You can configure the ```broadcast.js``` plugin by providing a ```broadcast``` option in the reveal.js initialization options.
@@ -107,7 +112,7 @@ document.addEventListener( 'newclient', function() {
   document.dispatchEvent( message );
 });
 ```
-In the [demo](https://rajgoel.github.io/reveal.js-demos/broadcast-demo.html) all drawings created with the ```chalkboard.js``` plugin are broadcasted to the clients. Checkout the source code of ```chalkboard.js``` plugin for an example of the implementation.
+In the [demo](https://rajgoel.github.io/reveal.js-demos/broadcast-demo.html) all drawings created with the [chalkboard plugin](https://rajgoel.github.io/reveal.js-demos/chalkboard-demo.html) are broadcasted to the clients. Checkout the source code of the chalkboard plugin for an example of the implementation.
 
 ## Limitations
 
